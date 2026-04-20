@@ -9,7 +9,7 @@
   - Member A: [Name] | Role: Logging & PII
   - Member B: [Name] | Role: Tracing & Enrichment
   - Member C: Trịnh Ngọc Tú | Role: SLO & Alerts
-  - Member D: [Name] | Role: Load Test & Dashboard
+  - Member D: Trần Tiến Long | Role: Load Test & Dashboard
   - Member E: [Name] | Role: Demo & Report
 
 ---
@@ -67,8 +67,8 @@
 - [TASKS_COMPLETED]: Đã cấu hình và tinh chỉnh các mục tiêu SLOs trong file `config/slo.yaml` (mốc P95 3000ms). Cập nhật ngưỡng thông báo (alert rules) trong `config/alert_rules.yaml` để cảnh báo sớm tình trạng trễ dịch vụ và vượt chi phí.
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_D_NAME]
-- [TASKS_COMPLETED]: 
+### Trần Tiến Long
+- [TASKS_COMPLETED]: Xây script `scripts/build_dashboard.py` (Matplotlib) render 6-panel dashboard từ `data/logs.jsonl` theo đúng `docs/dashboard-spec.md`, có SLO threshold line đỏ và đơn vị rõ ràng trên từng panel (ms, %, USD, count). Chạy `scripts/load_test.py --concurrency 5` cùng `scripts/inject_incident.py` cho cả 3 scenario (`rag_slow`, `tool_fail`, `cost_spike`) để sinh dữ liệu so sánh before/after. Xuất 2 snapshot evidence: `evidence/dashboard_baseline.png` (10 requests, P50/P95/P99 = 150/151/151ms, 0 errors, quality 0.88) và `evidence/dashboard_incidents.png` (30 requests, P95/P99 nhảy lên 2651ms, error rate 16.7% do RuntimeError khi bật `tool_fail`).
 - [EVIDENCE_LINK]: 
 
 ### [MEMBER_E_NAME]
