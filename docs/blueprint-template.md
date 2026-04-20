@@ -34,13 +34,13 @@
 - [SLO_TABLE]:
 | SLI | Target | Window | Current Value |
 |---|---:|---|---:|
-| Latency P95 | < 3000ms | 28d | TBD |
-| Error Rate | < 2% | 28d | TBD |
-| Cost Budget | < $2.5/day | 1d | TBD |
+| Latency P95 | < 3000ms | 28d | 157ms ✅ |
+| Error Rate | < 2% | 28d | 0.0% ✅ |
+| Cost Budget | < $2.5/day | 1d | $0.02 ✅ |
 
 ### 3.3 Alerts & Runbook
-- [ALERT_RULES_SCREENSHOT]: [Path to image]
-- [SAMPLE_RUNBOOK_LINK]: [docs/alerts.md#L...]
+- [ALERT_RULES_SCREENSHOT]: evidence/alert_rules_screenshot.png
+- [SAMPLE_RUNBOOK_LINK]: docs/alerts.md#1-high-latency-p95 | docs/alerts.md#2-high-error-rate | docs/alerts.md#3-cost-budget-spike
 
 ---
 
@@ -65,7 +65,7 @@
 
 ### Trịnh Ngọc Tú
 - [TASKS_COMPLETED]: Đã cấu hình và tinh chỉnh các mục tiêu SLOs trong file `config/slo.yaml` (mốc P95 3000ms). Cập nhật ngưỡng thông báo (alert rules) trong `config/alert_rules.yaml` để cảnh báo sớm tình trạng trễ dịch vụ và vượt chi phí.
-- [EVIDENCE_LINK]: 
+- [EVIDENCE_LINK]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability/commit/2ac546d (feat: add SLO definitions, alert rules)
 
 ### [MEMBER_D_NAME]
 - [TASKS_COMPLETED]: 
