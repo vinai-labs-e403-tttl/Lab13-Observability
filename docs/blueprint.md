@@ -61,7 +61,7 @@
 
 ### Đặng Thanh Tùng
 - [TASKS_COMPLETED]: Tích hợp Langfuse tracing tương thích v4.3.1: cập nhật `tracing.py` dùng decorator `@observe()` và `get_client()` API mới, tạo wrapper `_LangfuseContext` để ánh xạ `update_current_trace`/`update_current_observation` sang v4 API, sửa fallback dùng `ImportError` thay vì `Exception` rộng, thêm `load_dotenv()` vào `main.py` để tự động nạp credentials từ `.env`, làm giàu trace với `user_id` (đã hash), `session_id`, `tags`, `doc_count`, `query_preview` và `usage_details` cho mỗi request, nâng cấp langfuse từ 3.2.1 lên 4.3.1 và cập nhật `requirements.txt`, sửa schema `ChatRequest` thêm field `model` tùy chọn, xác minh traces hiển thị trên Langfuse cloud dashboard qua load test
-- [EVIDENCE_LINK]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability/commit/0458433
+- [EVIDENCE_LINK](https://github.com/vinai-labs-e403-tttl/Lab13-Observability/commit/0458433)
 
 ### [MEMBER_C_NAME]
 - [TASKS_COMPLETED]: 
