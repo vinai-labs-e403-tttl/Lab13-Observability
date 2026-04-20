@@ -7,7 +7,7 @@ from . import metrics
 from .mock_llm import FakeLLM
 from .mock_rag import retrieve
 from .pii import hash_user_id, summarize_text
-from .tracing import langfuse_context, observe
+from .tracing import langfuse_context, observe, langfuse
 
 
 @dataclass
@@ -44,6 +44,8 @@ class LabAgent:
             metadata={"doc_count": len(docs), "query_preview": summarize_text(message)},
             usage_details={"input": response.usage.input_tokens, "output": response.usage.output_tokens},
         )
+
+        langfuse.flush()
 
         metrics.record_request(
             latency_ms=latency_ms,
