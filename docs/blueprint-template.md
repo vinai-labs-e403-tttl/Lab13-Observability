@@ -3,10 +3,10 @@
 > **Instruction**: Fill in all sections below. This report is designed to be parsed by an automated grading assistant. Ensure all tags (e.g., `[GROUP_NAME]`) are preserved.
 
 ## 1. Team Metadata
-- [GROUP_NAME]: 
-- [REPO_URL]: 
+- [GROUP_NAME]: E403-team-31
+- [REPO_URL]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability
 - [MEMBERS]:
-  - Member A: [Name] | Role: Logging & PII
+  - Member A: Trần Kiên Trường | Role: Logging & PII
   - Member B: [Name] | Role: Tracing & Enrichment
   - Member C: Trịnh Ngọc Tú | Role: SLO & Alerts
   - Member D: Trần Tiến Long | Role: Load Test & Dashboard
@@ -55,9 +55,9 @@
 
 ## 5. Individual Contributions & Evidence
 
-### [MEMBER_A_NAME]
-- [TASKS_COMPLETED]: 
-- [EVIDENCE_LINK]: (Link to specific commit or PR)
+### Trần Kiên Trường
+- [TASKS_COMPLETED]: Implemented PII scrubbing processor in logging_config.py, correlation ID middleware with contextvar binding, request context enrichment in /chat endpoint, and added passport/vietnamese_address PII patterns
+- [EVIDENCE_LINK]: [(Link to specific commit or PR)](https://github.com/vinai-labs-e403-tttl/Lab13-Observability/pull/1)
 
 ### [MEMBER_B_NAME]
 - [TASKS_COMPLETED]: 
