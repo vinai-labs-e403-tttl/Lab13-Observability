@@ -3,10 +3,10 @@
 > **Instruction**: Fill in all sections below. This report is designed to be parsed by an automated grading assistant. Ensure all tags (e.g., `[GROUP_NAME]`) are preserved.
 
 ## 1. Team Metadata
-- [GROUP_NAME]: 
-- [REPO_URL]: 
+- [GROUP_NAME]: E403-team-31
+- [REPO_URL]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability
 - [MEMBERS]:
-  - Member A: [Name] | Role: Logging & PII
+  - Member A: Trần Kiên Trường | Role: Logging & PII
   - Member B: [Name] | Role: Tracing & Enrichment
   - Member C: Trịnh Ngọc Tú | Role: SLO & Alerts
   - Member D: Trần Tiến Long | Role: Load Test & Dashboard
@@ -34,13 +34,13 @@
 - [SLO_TABLE]:
 | SLI | Target | Window | Current Value |
 |---|---:|---|---:|
-| Latency P95 | < 3000ms | 28d | TBD |
-| Error Rate | < 2% | 28d | TBD |
-| Cost Budget | < $2.5/day | 1d | TBD |
+| Latency P95 | < 3000ms | 28d | 157ms ✅ |
+| Error Rate | < 2% | 28d | 0.0% ✅ |
+| Cost Budget | < $2.5/day | 1d | $0.02 ✅ |
 
 ### 3.3 Alerts & Runbook
-- [ALERT_RULES_SCREENSHOT]: [Path to image]
-- [SAMPLE_RUNBOOK_LINK]: [docs/alerts.md#L...]
+- [ALERT_RULES_SCREENSHOT]: evidence/alert_rules_screenshot.png
+- [SAMPLE_RUNBOOK_LINK]: docs/alerts.md#1-high-latency-p95 | docs/alerts.md#2-high-error-rate | docs/alerts.md#3-cost-budget-spike
 
 ---
 
@@ -55,9 +55,9 @@
 
 ## 5. Individual Contributions & Evidence
 
-### [MEMBER_A_NAME]
-- [TASKS_COMPLETED]: 
-- [EVIDENCE_LINK]: (Link to specific commit or PR)
+### Trần Kiên Trường
+- [TASKS_COMPLETED]: Implemented PII scrubbing processor in logging_config.py, correlation ID middleware with contextvar binding, request context enrichment in /chat endpoint, and added passport/vietnamese_address PII patterns
+- [EVIDENCE_LINK]: [(Link to specific commit or PR)](https://github.com/vinai-labs-e403-tttl/Lab13-Observability/pull/1)
 
 ### [MEMBER_B_NAME]
 - [TASKS_COMPLETED]: 
@@ -65,7 +65,7 @@
 
 ### Trịnh Ngọc Tú
 - [TASKS_COMPLETED]: Đã cấu hình và tinh chỉnh các mục tiêu SLOs trong file `config/slo.yaml` (mốc P95 3000ms). Cập nhật ngưỡng thông báo (alert rules) trong `config/alert_rules.yaml` để cảnh báo sớm tình trạng trễ dịch vụ và vượt chi phí.
-- [EVIDENCE_LINK]: 
+- [EVIDENCE_LINK]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability/commit/2ac546d (feat: add SLO definitions, alert rules)
 
 ### Trần Tiến Long
 - [TASKS_COMPLETED]: Xây script `scripts/build_dashboard.py` (Matplotlib) render 6-panel dashboard từ `data/logs.jsonl` theo đúng `docs/dashboard-spec.md`, có SLO threshold line đỏ và đơn vị rõ ràng trên từng panel (ms, %, USD, count). Chạy `scripts/load_test.py --concurrency 5` cùng `scripts/inject_incident.py` cho cả 3 scenario (`rag_slow`, `tool_fail`, `cost_spike`) để sinh dữ liệu so sánh before/after. Xuất 2 snapshot evidence: `evidence/dashboard_baseline.png` (10 requests, P50/P95/P99 = 150/151/151ms, 0 errors, quality 0.88) và `evidence/dashboard_incidents.png` (30 requests, P95/P99 nhảy lên 2651ms, error rate 16.7% do RuntimeError khi bật `tool_fail`).
