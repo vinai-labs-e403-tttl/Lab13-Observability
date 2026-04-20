@@ -9,7 +9,7 @@
   - Member A: Trần Kiên Trường | Role: Logging & PII
   - Member B: [Name] | Role: Tracing & Enrichment
   - Member C: [Name] | Role: SLO & Alerts
-  - Member D: [Name] | Role: Load Test & Dashboard
+  - Member D: Trần Tiến Long | Role: Load Test & Dashboard
   - Member E: [Name] | Role: Demo & Report
 
 ---
@@ -57,7 +57,7 @@
 
 ### Trần Kiên Trường
 - [TASKS_COMPLETED]: Implemented PII scrubbing processor in logging_config.py, correlation ID middleware with contextvar binding, request context enrichment in /chat endpoint, and added passport/vietnamese_address PII patterns
-- [EVIDENCE_LINK]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability/pull/1
+- [EVIDENCE_LINK]: (Link to specific commit or PR)
 
 ### [MEMBER_B_NAME]
 - [TASKS_COMPLETED]: 
@@ -67,8 +67,8 @@
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_D_NAME]
-- [TASKS_COMPLETED]: 
+### Trần Tiến Long
+- [TASKS_COMPLETED]: Built `scripts/build_dashboard.py` (Matplotlib) that renders the 6-panel dashboard from `data/logs.jsonl` per `docs/dashboard-spec.md`, with SLO threshold lines and units labeled on every axis (ms, %, USD, count). Ran `scripts/load_test.py --concurrency 5` together with `scripts/inject_incident.py` across all three scenarios (`rag_slow`, `tool_fail`, `cost_spike`) to produce before/after comparison data. Exported two evidence snapshots: `evidence/dashboard_baseline.png` (10 requests, P50/P95/P99 = 150/151/151ms, 0 errors, quality 0.88) and `evidence/dashboard_incidents.png` (30 requests, P95/P99 rose to 2651ms, error rate 16.7% from RuntimeError under `tool_fail`).
 - [EVIDENCE_LINK]: 
 
 ### [MEMBER_E_NAME]
