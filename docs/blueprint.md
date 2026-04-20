@@ -7,9 +7,9 @@
 - [REPO_URL]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability
 - [MEMBERS]:
   - Member A: Trần Kiên Trường | Role: Logging & PII
-  - Member B: [Name] | Role: Tracing & Enrichment
+  - Member B: Đặng Thanh Tùng | Role: Tracing & Enrichment
   - Member C: [Name] | Role: SLO & Alerts
-  - Member D: [Name] | Role: Load Test & Dashboard
+  - Member D: Trần Tiến Long | Role: Load Test & Dashboard
   - Member E: [Name] | Role: Demo & Report
 
 ---
@@ -57,18 +57,18 @@
 
 ### Trần Kiên Trường
 - [TASKS_COMPLETED]: Implemented PII scrubbing processor in logging_config.py, correlation ID middleware with contextvar binding, request context enrichment in /chat endpoint, and added passport/vietnamese_address PII patterns
-- [EVIDENCE_LINK]: (Link to specific commit or PR)
+- [EVIDENCE_LINK]: [(Link to specific commit or PR)](https://github.com/vinai-labs-e403-tttl/Lab13-Observability/pull/1)
 
-### [MEMBER_B_NAME]
-- [TASKS_COMPLETED]: 
-- [EVIDENCE_LINK]: 
+### Đặng Thanh Tùng
+- [TASKS_COMPLETED]: Tích hợp Langfuse tracing tương thích v4.3.1: cập nhật `tracing.py` dùng decorator `@observe()` và `get_client()` API mới, tạo wrapper `_LangfuseContext` để ánh xạ `update_current_trace`/`update_current_observation` sang v4 API, sửa fallback dùng `ImportError` thay vì `Exception` rộng, thêm `load_dotenv()` vào `main.py` để tự động nạp credentials từ `.env`, làm giàu trace với `user_id` (đã hash), `session_id`, `tags`, `doc_count`, `query_preview` và `usage_details` cho mỗi request, nâng cấp langfuse từ 3.2.1 lên 4.3.1 và cập nhật `requirements.txt`, sửa schema `ChatRequest` thêm field `model` tùy chọn, xác minh traces hiển thị trên Langfuse cloud dashboard qua load test
+- [EVIDENCE_LINK]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability/commit/0458433
 
 ### [MEMBER_C_NAME]
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_D_NAME]
-- [TASKS_COMPLETED]: 
+### Trần Tiến Long
+- [TASKS_COMPLETED]: Built `scripts/build_dashboard.py` (Matplotlib) that renders the 6-panel dashboard from `data/logs.jsonl` per `docs/dashboard-spec.md`, with SLO threshold lines and units labeled on every axis (ms, %, USD, count). Ran `scripts/load_test.py --concurrency 5` together with `scripts/inject_incident.py` across all three scenarios (`rag_slow`, `tool_fail`, `cost_spike`) to produce before/after comparison data. Exported two evidence snapshots: `evidence/dashboard_baseline.png` (10 requests, P50/P95/P99 = 150/151/151ms, 0 errors, quality 0.88) and `evidence/dashboard_incidents.png` (30 requests, P95/P99 rose to 2651ms, error rate 16.7% from RuntimeError under `tool_fail`).
 - [EVIDENCE_LINK]: 
 
 ### [MEMBER_E_NAME]
