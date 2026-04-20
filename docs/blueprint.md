@@ -57,7 +57,7 @@
 
 ### Trần Kiên Trường
 - [TASKS_COMPLETED]: Implemented PII scrubbing processor in logging_config.py, correlation ID middleware with contextvar binding, request context enrichment in /chat endpoint, and added passport/vietnamese_address PII patterns
-- [EVIDENCE_LINK]: (Link to specific commit or PR)
+- [EVIDENCE_LINK]: [(Link to specific commit or PR)](https://github.com/vinai-labs-e403-tttl/Lab13-Observability/pull/1)
 
 ### Đặng Thanh Tùng
 - [TASKS_COMPLETED]: Tích hợp Langfuse tracing tương thích v4.3.1: cập nhật `tracing.py` dùng decorator `@observe()` và `get_client()` API mới, tạo wrapper `_LangfuseContext` để ánh xạ `update_current_trace`/`update_current_observation` sang v4 API, sửa fallback dùng `ImportError` thay vì `Exception` rộng, thêm `load_dotenv()` vào `main.py` để tự động nạp credentials từ `.env`, làm giàu trace với `user_id` (đã hash), `session_id`, `tags`, `doc_count`, `query_preview` và `usage_details` cho mỗi request, nâng cấp langfuse từ 3.2.1 lên 4.3.1 và cập nhật `requirements.txt`, sửa schema `ChatRequest` thêm field `model` tùy chọn, xác minh traces hiển thị trên Langfuse cloud dashboard qua load test
