@@ -57,7 +57,7 @@
 
 ### Trần Kiên Trường
 - [TASKS_COMPLETED]: Implemented PII scrubbing processor in logging_config.py, correlation ID middleware with contextvar binding, request context enrichment in /chat endpoint, and added passport/vietnamese_address PII patterns
-- [EVIDENCE_LINK]: (Link to specific commit or PR)
+- [EVIDENCE_LINK]: https://github.com/vinai-labs-e403-tttl/Lab13-Observability/pull/1
 
 ### [MEMBER_B_NAME]
 - [TASKS_COMPLETED]: 
