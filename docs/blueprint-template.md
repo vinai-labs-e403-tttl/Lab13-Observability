@@ -8,7 +8,7 @@
 - [MEMBERS]:
   - Member A: [Name] | Role: Logging & PII
   - Member B: [Name] | Role: Tracing & Enrichment
-  - Member C: [Name] | Role: SLO & Alerts
+  - Member C: Trịnh Ngọc Tú | Role: SLO & Alerts
   - Member D: [Name] | Role: Load Test & Dashboard
   - Member E: [Name] | Role: Demo & Report
 
@@ -34,9 +34,9 @@
 - [SLO_TABLE]:
 | SLI | Target | Window | Current Value |
 |---|---:|---|---:|
-| Latency P95 | < 3000ms | 28d | |
-| Error Rate | < 2% | 28d | |
-| Cost Budget | < $2.5/day | 1d | |
+| Latency P95 | < 3000ms | 28d | TBD |
+| Error Rate | < 2% | 28d | TBD |
+| Cost Budget | < $2.5/day | 1d | TBD |
 
 ### 3.3 Alerts & Runbook
 - [ALERT_RULES_SCREENSHOT]: [Path to image]
@@ -63,8 +63,8 @@
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_C_NAME]
-- [TASKS_COMPLETED]: 
+### Trịnh Ngọc Tú
+- [TASKS_COMPLETED]: Đã cấu hình và tinh chỉnh các mục tiêu SLOs trong file `config/slo.yaml` (mốc P95 3000ms). Cập nhật ngưỡng thông báo (alert rules) trong `config/alert_rules.yaml` để cảnh báo sớm tình trạng trễ dịch vụ và vượt chi phí.
 - [EVIDENCE_LINK]: 
 
 ### [MEMBER_D_NAME]
